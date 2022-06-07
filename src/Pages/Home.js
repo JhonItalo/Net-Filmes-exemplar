@@ -1,7 +1,7 @@
 //router dom
 import React, { useState, useEffect } from 'react';
 //componentes
-import HeaderConteudo from "../componentes/HomePage/HeaderConteudo"
+import HeaderBanner from '../componentes/HomePage/HeaderBanner';
 
 function Home() {
     //configutações de acesso ou tmdb
@@ -14,18 +14,25 @@ function Home() {
     //funcão para buscar dados da api
     const buscaApi = async (opcao) => {
         const req = await fetch(`${tmdb}${opcao}${key}&language=pt-BR`)
-        const resposta = await req.json();
-        return resposta
+        const response = await req.json();
+        return response
     }
-    useEffect(async () => {
-        setposterPrincipal(buscaApi("movie/338953?"))
+    //buscaApi("movie/338953?");
+    useEffect(() => {
+        const req = async () => {
+            const reqFilmeBanner = await buscaApi("movie/338953?");
+            setposterPrincipal(reqFilmeBanner);
+        }
+        req();
+
     }, []);
 
     return (
         <div>
-            <HeaderConteudo banner={posterPrincipal} />
+            <HeaderBanner filmeDestaque={posterPrincipal} />
         </div>
     );
 }
 
 export default Home;
+/*<img style={{ backgroundSize: "cover", width: "100vw", height: "100vh", backgroundPosition: "center" }} src={`https://image.tmdb.org/t/p/original//7ucaMpXAmlIM24qZZ8uI9hCY0hm.jpg`} alt="title" title='logo' />*/

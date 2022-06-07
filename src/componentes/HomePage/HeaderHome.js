@@ -19,7 +19,7 @@ function HeaderHome() {
         <i className="fa-solid fa-magnifying-glass"></i>
         <i className="fa-solid fa-bell"></i>
         <div className={styles.user}>
-          <i className="fa-solid fa-user" style={{ fontSize: "30px" }}></i>
+          <i className="fa-solid fa-user" style={{ fontSize: "25px" }}></i>
           <i className="fa-solid fa-caret-down" style={{ fontSize: "15px" }}></i>
         </div>
       </div>
