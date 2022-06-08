@@ -1,14 +1,16 @@
 //css
-import styles from './HeaderHome.module.scss'
+import styles from './Header.module.scss'
+//router
+import { Link } from "react-router-dom";
 
-function HeaderHome() {
+function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.capsula_Logo_Navigation_Flex}>
         <img src="/netflix.png" alt="logo" title='logo' />
         <nav className={styles.navigation}>
-          <li>Início</li>
-          <li>Séries</li>
+          <li> <Link to='/'>Início</Link></li>
+          <li> <Link to='/series'>Séries</Link></li>
           <li>Filmes</li>
           <li>Bombando</li>
           <li>Minha lista</li>
@@ -27,4 +29,4 @@ function HeaderHome() {
   );
 }
 
-export default HeaderHome;
+export default Header;
