@@ -1,0 +1,58 @@
+.conteudo_banner_home {
+    margin-top: 40vh;
+    margin-left: 45px;
+
+    p {
+        font-size: 40px;
+        color: white;
+    }
+
+    .assistir_moreinfo_flex {
+        display: flex;
+        gap: 10px;
+
+        .assistir {
+            width: 80px;
+            height: 22px;
+            box-sizing: content-box;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+            padding: 7px 21px 7px 20px;
+            background-color: white;
+            border-radius: 3px;
+            font-size: 15px;
+            font-weight: 600;
+
+            i {
+                font-size: 23px;
+            }
+        }
+        .assistir:hover {
+            background-color: rgba($color: white, $alpha: 0.8);
+        }
+
+        .moreinfo {
+            height: 22px;
+            box-sizing: content-box;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+            padding: 7px 21px 7px 20px;
+            background-color: rgba(109, 109, 110, 0.7);
+            border-radius: 3px;
+            font-size: 15px;
+            font-weight: 600;
+            color: white;
+
+            i {
+                font-size: 20px;
+            }
+        }
+        .moreinfo:hover {
+            background-color: rgba(109, 109, 110, 0.5);
+        }
+    }
+}

@@ -1,7 +1,4 @@
-/*.App{
-background-image: url("../public/net.png");
-width: 100vw;
-height: 100vh;
+.App{
 
+box-sizing: border-box;
 }
-*/

@@ -1,7 +1,8 @@
 //router dom
 import React, { useState, useEffect } from 'react';
 //componentes
-function Home({atualrota}) {
+function Home({ atualrota }) {
+    atualrota("Home");
     /*  //configutações de acesso ou tmdb
       const key = "api_key=617375c16cb7cbacc59f9c2b6102e4e4"
       const tmdb = "https://api.themoviedb.org/3/"

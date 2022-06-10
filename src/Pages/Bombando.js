@@ -1,6 +1,7 @@
 
 
 const Bombando = ({ atualrota }) => {
+    atualrota("Bombando")
 
     return (
         <div>

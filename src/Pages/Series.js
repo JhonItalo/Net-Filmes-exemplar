@@ -1,6 +1,7 @@
 
 
 const Series = ({ atualrota }) => {
+    atualrota("Series")
 
     return (
         <div>

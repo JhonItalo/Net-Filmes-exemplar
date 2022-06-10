@@ -1,6 +1,7 @@
 
 
 const MinhaLista = ({ atualrota }) => {
+    atualrota("Minhalista")
 
     return (
         <div>

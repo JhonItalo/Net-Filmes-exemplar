@@ -1,6 +1,7 @@
 
 
 const Filmes = ({ atualrota }) => {
+    atualrota("Filmes")
 
     return (
         <div>
