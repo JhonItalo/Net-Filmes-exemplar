@@ -7,6 +7,7 @@ import React, { useState, useEffect } from 'react';
 
 function Header({ atualrota }) {
   const [rotaatual, setrotaatual] = useState("");
+  const [scrollyActive, setscrollyActive] = useState("");
 
   useEffect(() => {
     setrotaatual(atualrota);
@@ -15,7 +16,7 @@ function Header({ atualrota }) {
   return (
     <header className={styles.header}>
       <div className={styles.capsula_Logo_Navigation_Flex}>
-        <img src="/netflix.png" alt="logo" title='logo' />
+        <Link to="/"><img src="/netflix.png" alt="logo" title='logo' /></Link>
         <nav className={styles.navigation}>
           <li><Link to='/' className={rotaatual === "Home" ? `${styles.activeBold}` : ""} >Início</Link></li>
           <li> <Link to='/series' className={rotaatual === "Series" ? `${styles.activeBold}` : ""}>Séries</Link></li>

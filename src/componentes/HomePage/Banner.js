@@ -3,30 +3,28 @@
 import React, { useState, useEffect } from 'react';
 //componentes
 import Header from "./Header";
+import ConteudoHome from './ConteudoHome';
 //css
 import styles from './Banner.module.scss'
-import ConteudoHome from './ConteudoHome';
-
-const buscaApi = async (opcao) => {
-    const key = "api_key=617375c16cb7cbacc59f9c2b6102e4e4"
-    const tmdb = "https://api.themoviedb.org/3/"
-    const req = await fetch(`${tmdb}${opcao}${key}&language=pt-BR`)
-    const response = await req.json();
-    console.log(response)
-    return response
-}
+//requisicoes func
+import { buscaApi, listafilmes } from "../../Requisicoes.js"
 
 function Banner({ atualrota }) {
-
+    //filme banner principal
     const [filmeDestaque, setfilmeDestaque] = useState("")
+    //controle de rotas
     const [rotaatual, setrotaatual] = useState("")
+    //lista de filmes
+    const [filmes, setfilmes] = useState('');
+
 
     useEffect(() => {
-        const req = async () => {
-            const requi = await buscaApi("movie/338953?");
-            setfilmeDestaque(requi);
-        }
-        req();
+        (async function req() {
+            const t = await listafilmes();
+            setfilmes(t);
+            console.log(filmes)
+            console.log("to aqui")
+        })();
     }, []);
 
     useEffect(() => {
@@ -44,9 +42,8 @@ function Banner({ atualrota }) {
             <div className={styles.gradiente_banner}></div>
 
             {rotaatual === "Home" &&
-                <ConteudoHome title={filmeDestaque.title} />
+                <ConteudoHome title={filmeDestaque.title} descricao={filmeDestaque.overview} />
             }
-
             {rotaatual === "Series" &&
                 <div className={styles.conteudo_banner_home}>
                     <h1>series</h1>

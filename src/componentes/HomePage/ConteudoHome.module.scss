@@ -1,25 +1,33 @@
 .conteudo_banner_home {
-    margin-top: 40vh;
-    margin-left: 45px;
+    margin-left: 40px;
+    border: 1px solid green;
+    position: absolute;
+    bottom: 160px;
 
-    p {
+    .title {
         font-size: 40px;
         color: white;
     }
 
+    p {
+        font-size: 12px;
+        color: white;
+    }
+
     .assistir_moreinfo_flex {
+        margin-top: 20px;
         display: flex;
         gap: 10px;
 
         .assistir {
-            width: 80px;
+            width: 100px;
             height: 22px;
             box-sizing: content-box;
             display: flex;
             gap: 15px;
             justify-content: center;
             align-items: center;
-            padding: 7px 21px 7px 20px;
+            padding: 10px 20px 10px 20px;
             background-color: white;
             border-radius: 3px;
             font-size: 15px;
@@ -34,13 +42,15 @@
         }
 
         .moreinfo {
+            box-sizing: content-box;
+            width: 180px;
             height: 22px;
             box-sizing: content-box;
             display: flex;
-            gap: 15px;
+            gap: 20px;
             justify-content: center;
             align-items: center;
-            padding: 7px 21px 7px 20px;
+            padding: 10px 25px 10px 15px;
             background-color: rgba(109, 109, 110, 0.7);
             border-radius: 3px;
             font-size: 15px;

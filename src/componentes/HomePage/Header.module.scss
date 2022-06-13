@@ -1,8 +1,7 @@
-header{
+header {
     box-sizing: border-box;
-    font-family:  Helvetica, sans-serif;
-    //background-color: green;
-    background-image: linear-gradient( rgba(10,10,10,0.7) 50%, transparent);
+    font-family: Helvetica, sans-serif;
+    background-image: linear-gradient(rgba(10, 10, 10, 0.7) 50%, transparent);
     width: 100%;
     height: 70px;
     display: flex;
@@ -10,50 +9,58 @@ header{
     position: sticky;
     top: 0;
 
-    .capsula_Logo_Navigation_Flex{
+    .capsula_Logo_Navigation_Flex {
         display: flex;
         gap: 33px;
         border: 2px solid aqua;
         margin-left: 40px;
+        height: 100%;
 
-        .navigation{
+        a {
+            img {
+                height: 100%;
+                width: auto;
+            }
+        }
+
+        .navigation {
             list-style: none;
             display: flex;
             color: white;
             gap: 18px;
             border: 2px solid palegreen;
             align-items: center;
-    
-            li{
+
+            li {
                 font-size: 15px;
-                
-                .activeBold{
+
+                .activeBold {
                     font-weight: 700;
                 }
 
-                a{
+                a {
                     text-decoration: none;
                 }
-                a:link, a:visited, a:hover, a:active {
+                a:link,
+                a:visited,
+                a:hover,
+                a:active {
                     color: inherit;
-                  }
-               
-      
+                }
             }
         }
-        
     }
 
-    .busca_e_icons{
+    .busca_e_icons {
         display: flex;
         gap: 30px;
         font-size: 20px;
         margin-right: 70px;
         border: 2px solid orange;
-        align-items: center ;
+        align-items: center;
         color: white;
 
-        .user{
+        .user {
             display: flex;
             gap: 10px;
             justify-content: center;
@@ -61,5 +68,7 @@ header{
             align-items: center;
         }
     }
-
+}
+.activescrolly {
+    background-color: red;
 }
