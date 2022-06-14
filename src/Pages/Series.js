@@ -1,7 +1,7 @@
 
 
-const Series = ({ atualrota }) => {
-    atualrota("Series")
+const Series = ({ setrotaAtualParams }) => {
+    setrotaAtualParams("Series")
 
     return (
         <div>

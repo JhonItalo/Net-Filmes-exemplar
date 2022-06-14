@@ -1,7 +1,7 @@
 
 
-const Bombando = ({ atualrota }) => {
-    atualrota("Bombando")
+const Bombando = ({ setrotaAtualParams }) => {
+    setrotaAtualParams("Bombando")
 
     return (
         <div>

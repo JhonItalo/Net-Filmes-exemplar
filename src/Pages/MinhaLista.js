@@ -1,7 +1,7 @@
 
 
-const MinhaLista = ({ atualrota }) => {
-    atualrota("Minhalista")
+const MinhaLista = ({ setrotaAtualParams }) => {
+    setrotaAtualParams("Minhalista")
 
     return (
         <div>

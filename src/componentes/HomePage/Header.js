@@ -5,24 +5,24 @@ import { Link } from "react-router-dom";
 //hook
 import React, { useState, useEffect } from 'react';
 
-function Header({ atualrota }) {
-  const [rotaatual, setrotaatual] = useState("");
-  const [scrollyActive, setscrollyActive] = useState("");
+function Header({ rotaAtualParams }) {
+  const [rotaAtual, setrotaAtual] = useState("");
+
 
   useEffect(() => {
-    setrotaatual(atualrota);
-  }, [atualrota]);
+    setrotaAtual(rotaAtualParams);
+  }, [rotaAtualParams]);
 
   return (
     <header className={styles.header}>
       <div className={styles.capsula_Logo_Navigation_Flex}>
         <Link to="/"><img src="/netflix.png" alt="logo" title='logo' /></Link>
         <nav className={styles.navigation}>
-          <li><Link to='/' className={rotaatual === "Home" ? `${styles.activeBold}` : ""} >Início</Link></li>
-          <li> <Link to='/series' className={rotaatual === "Series" ? `${styles.activeBold}` : ""}>Séries</Link></li>
-          <li> <Link to="/filmes" className={rotaatual === "Filmes" ? `${styles.activeBold}` : ""}>Filmes</Link></li>
-          <li> <Link to="/bombando" className={rotaatual === "Bombando" ? `${styles.activeBold}` : ""}>Bombando</Link></li>
-          <li> <Link to="/minhalista" className={rotaatual === "Minhalista" ? `${styles.activeBold}` : ""}> Minha lista</Link></li>
+          <li><Link to='/' className={rotaAtual === "Home" ? `${styles.activeBold}` : ""} >Início</Link></li>
+          <li> <Link to='/series' className={rotaAtual === "Series" ? `${styles.activeBold}` : ""}>Séries</Link></li>
+          <li> <Link to="/filmes" className={rotaAtual === "Filmes" ? `${styles.activeBold}` : ""}>Filmes</Link></li>
+          <li> <Link to="/bombando" className={rotaAtual === "Bombando" ? `${styles.activeBold}` : ""}>Bombando</Link></li>
+          <li> <Link to="/minhalista" className={rotaAtual === "Minhalista" ? `${styles.activeBold}` : ""}> Minha lista</Link></li>
         </nav>
       </div>
 

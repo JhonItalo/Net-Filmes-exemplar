@@ -1,7 +1,7 @@
 
 
-const Filmes = ({ atualrota }) => {
-    atualrota("Filmes")
+const Filmes = ({ setrotaAtualParams }) => {
+    setrotaAtualParams("Filmes")
 
     return (
         <div>

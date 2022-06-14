@@ -4,7 +4,7 @@ const tmdb = "https://api.themoviedb.org/3/"
 const buscaApi = async (opcao) => {
     const req = await fetch(`${tmdb}${opcao}${key}&language=pt-BR&page=1`)
     const response = await req.json();
-    console.log("entrei")
+    //console.log(response)
     return response
 }
 
@@ -46,7 +46,4 @@ const listafilmes = async () => {
         lista: await buscaApi("discover/movie?sort_by=popularity.desc&page=1&with_genres=10749&")
     }]
 }
-
-
-
 export { buscaApi, listafilmes };

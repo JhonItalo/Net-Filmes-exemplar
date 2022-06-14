@@ -12,7 +12,7 @@ header {
     .capsula_Logo_Navigation_Flex {
         display: flex;
         gap: 33px;
-        border: 2px solid aqua;
+        //border: 2px solid aqua;
         margin-left: 40px;
         height: 100%;
 
@@ -28,7 +28,7 @@ header {
             display: flex;
             color: white;
             gap: 18px;
-            border: 2px solid palegreen;
+            //border: 2px solid palegreen;
             align-items: center;
 
             li {
@@ -52,11 +52,12 @@ header {
     }
 
     .busca_e_icons {
+        opacity: 0.9;
         display: flex;
         gap: 30px;
         font-size: 20px;
         margin-right: 70px;
-        border: 2px solid orange;
+        //border: 2px solid orange;
         align-items: center;
         color: white;
 
@@ -64,11 +65,11 @@ header {
             display: flex;
             gap: 10px;
             justify-content: center;
-            border: 2px solid blue;
+            //border: 2px solid blue;
             align-items: center;
         }
     }
 }
-.activescrolly {
+/*.activescrolly {
     background-color: red;
-}
+}*/
