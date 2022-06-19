@@ -1,23 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import styles from './Banner.module.scss'
 //componentes
 import Header from "./Header";
 import InfoFilme from './InfoFilme';
+//context
+import { rotasContext } from '../../Contexto/rotasContext';
 
-function Banner({ rotaAtualParams, filmebanner }) {
-    //controle de rotas
-    const [rotaAtual, setrotaAtual] = useState("")
-    //filme banner principal
+function Banner({ filmebanner }) {
     const [filmeDestaque, setfilmeDestaque] = useState("")
+    //rotas context
+    const { rotaAtual, setrotaAtual } = useContext(rotasContext)
 
     useEffect(() => {
         setfilmeDestaque(filmebanner);
-        console.log("entrei filmedestaue")
     }, [filmebanner]);
-
-    useEffect(() => {
-        setrotaAtual(rotaAtualParams);
-    }, [rotaAtualParams]);
 
     return (
         <section className={styles.banner}
@@ -25,11 +21,9 @@ function Banner({ rotaAtualParams, filmebanner }) {
                 backgroundImage: `url("https://image.tmdb.org/t/p/original/${filmeDestaque.backdrop_path}")`,
             }} >
 
-            <Header rotaAtualParams={rotaAtual} />
-
-            <div className={styles.gradiente_banner}></div>
-
+            <Header />
             <InfoFilme filmeDestaqueParams={filmeDestaque} />
+            <div className={styles.gradiente_banner}></div>
 
             {rotaAtual === "Series" &&
                 <div className={styles.conteudo_banner_home}>
@@ -54,10 +48,6 @@ function Banner({ rotaAtualParams, filmebanner }) {
                     <h1>minhalista</h1>
                 </div>
             }
-
-
-
-
         </ section>
     );
 }

@@ -1,7 +1,9 @@
+import { rotasContext } from "../Contexto/rotasContext";
+import { useContext } from "react";
 
-
-const Bombando = ({ setrotaAtualParams }) => {
-    setrotaAtualParams("Bombando")
+const Bombando = () => {
+    const { setrotaAtual } = useContext(rotasContext)
+    setrotaAtual("Bombando")
 
     return (
         <div>

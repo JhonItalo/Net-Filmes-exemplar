@@ -1,7 +1,9 @@
+import { rotasContext } from "../Contexto/rotasContext";
+import { useContext } from "react";
 
-
-const Filmes = ({ setrotaAtualParams }) => {
-    setrotaAtualParams("Filmes")
+const Filmes = () => {
+    const { setrotaAtual } = useContext(rotasContext)
+    setrotaAtual("Filmes")
 
     return (
         <div>

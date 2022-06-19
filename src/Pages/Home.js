@@ -1,6 +1,9 @@
+import { rotasContext } from "../Contexto/rotasContext";
+import { useContext } from "react";
 
-function Home({ setrotaAtualParams }) {
-    setrotaAtualParams("Home")
+function Home() {
+    const { setrotaAtual } = useContext(rotasContext)
+    setrotaAtual("Home")
     return (
         <div>
             <h1>teste</h1>

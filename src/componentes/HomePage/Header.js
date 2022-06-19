@@ -1,22 +1,15 @@
-//css
 import styles from './Header.module.scss'
-//router
 import { Link } from "react-router-dom";
-//hook
-import React, { useState, useEffect } from 'react';
+import React, { useContext } from 'react';
+import { rotasContext } from '../../Contexto/rotasContext';
 
-function Header({ rotaAtualParams }) {
-  const [rotaAtual, setrotaAtual] = useState("");
-
-
-  useEffect(() => {
-    setrotaAtual(rotaAtualParams);
-  }, [rotaAtualParams]);
+function Header() {
+  const { rotaAtual } = useContext(rotasContext)
 
   return (
     <header className={styles.header}>
       <div className={styles.capsula_Logo_Navigation_Flex}>
-        <Link to="/"><img src="/netflix.png" alt="logo" title='logo' /></Link>
+        <Link to="/"><img src="/netflix.png" alt="logo" title='Netflix' /></Link>
         <nav className={styles.navigation}>
           <li><Link to='/' className={rotaAtual === "Home" ? `${styles.activeBold}` : ""} >Início</Link></li>
           <li> <Link to='/series' className={rotaAtual === "Series" ? `${styles.activeBold}` : ""}>Séries</Link></li>

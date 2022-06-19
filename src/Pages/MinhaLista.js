@@ -1,7 +1,9 @@
+import { rotasContext } from "../Contexto/rotasContext";
+import { useContext } from "react";
 
-
-const MinhaLista = ({ setrotaAtualParams }) => {
-    setrotaAtualParams("Minhalista")
+const MinhaLista = () => {
+    const { setrotaAtual } = useContext(rotasContext)
+    setrotaAtual("Minhalista")
 
     return (
         <div>

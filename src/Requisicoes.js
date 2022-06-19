@@ -4,7 +4,6 @@ const tmdb = "https://api.themoviedb.org/3/"
 const buscaApi = async (opcao) => {
     const req = await fetch(`${tmdb}${opcao}${key}&language=pt-BR&page=1`)
     const response = await req.json();
-    //console.log(response)
     return response
 }
 
