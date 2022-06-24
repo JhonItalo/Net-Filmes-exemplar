@@ -13,20 +13,29 @@ const listafilmes = async () => {
         lista: await buscaApi("discover/tv?with_network=213&")
     },
     {
-        titulo: "Popular",
-        lista: await buscaApi("movie/popular?")
-    },
-    {
         titulo: "Bem avaliados",
         lista: await buscaApi("movie/top_rated?")
     },
     {
-        titulo: "Virais da semana",
-        lista: await buscaApi("trending/movie/week?")
+        titulo: "Horror",
+        lista: await buscaApi("discover/movie?sort_by=popularity.desc&page=1&with_genres=27&")
+    },
+    {
+        titulo: "Em Alta",
+        lista: await buscaApi("movie/popular?")
+    },
+    {
+        titulo: "Musical",
+        lista: await buscaApi("discover/movie?sort_by=popularity.desc&page=1&with_genres=10402&")
+    },
+    {
+        titulo: "Ficção Científica",
+        lista: await buscaApi("discover/movie?sort_by=release_date.descc&page=1&with_genres=878&")
+
     },
     {
         titulo: "Ação",
-        lista: await buscaApi("discover/movie?sort_by=popularity.desc&page=1&with_genres=28&")
+        lista: await buscaApi("discover/movie?sort_by=release_date.descc&page=1&with_genres=28&")
     },
     {
         titulo: "Documentários",
@@ -36,10 +45,7 @@ const listafilmes = async () => {
         titulo: "Drama",
         lista: await buscaApi("discover/movie?sort_by=popularity.desc&page=1&with_genres=18&")
     },
-    {
-        titulo: "Horror",
-        lista: await buscaApi("discover/movie?sort_by=popularity.desc&page=1&with_genres=27&")
-    },
+
     {
         titulo: "Romance",
         lista: await buscaApi("discover/movie?sort_by=popularity.desc&page=1&with_genres=10749&")

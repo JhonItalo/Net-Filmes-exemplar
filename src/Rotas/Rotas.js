@@ -7,7 +7,8 @@ import Filmes from "../Pages/Filmes"
 import Bombando from "../Pages/Bombando"
 import MinhaLista from "../Pages/MinhaLista"
 //componentes
-import Banner from "../componentes/HomePage/Banner"
+import Banner from "../componentes/CompFixed/Banner"
+import Header from "../componentes/CompFixed/Header"
 //requisições func
 import { listafilmes } from "../Requisicoes"
 //context
@@ -33,13 +34,14 @@ const Rotas = () => {
     return (
         <BrowserRouter>
             <rotasContext.Provider value={{ rotaAtual, setrotaAtual }}>
+                <Header />
                 <Banner filmebanner={filmeDestaque} />
                 <Routes>
-                    <Route index element={<Home setrotaAtualParams={setrotaAtual} />} />
-                    <Route path="/series" element={<Series setrotaAtualParams={setrotaAtual} />} />
-                    <Route path="/filmes" element={<Filmes setrotaAtualParams={setrotaAtual} />} />
-                    <Route path="/bombando" element={<Bombando setrotaAtualParams={setrotaAtual} />} />
-                    <Route path="/minhalista" element={<MinhaLista setrotaAtualParams={setrotaAtual} />} />
+                    <Route index element={<Home filmesparams={filmes} />} />
+                    <Route path="/series" element={<Series />} />
+                    <Route path="/filmes" element={<Filmes />} />
+                    <Route path="/bombando" element={<Bombando />} />
+                    <Route path="/minhalista" element={<MinhaLista />} />
                 </Routes>
             </rotasContext.Provider>
         </BrowserRouter>

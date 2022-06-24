@@ -1,13 +1,30 @@
 import styles from './Header.module.scss'
 import { Link } from "react-router-dom";
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { rotasContext } from '../../Contexto/rotasContext';
 
 function Header() {
   const { rotaAtual } = useContext(rotasContext)
+  const [activescrolly, setactivescrolly] = useState(false)
+
+  useEffect(() => {
+    const scrolly = () => {
+      if (window.scrollY > 0) {
+        setactivescrolly(true)
+      }
+      else {
+        setactivescrolly(false)
+      }
+
+    }
+    window.addEventListener('scroll', scrolly);
+    return () => {
+      window.removeEventListener('scroll', scrolly);
+    }
+  }, [])
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${activescrolly === true ? `${styles.activescrolly}` : ""} `}>
       <div className={styles.capsula_Logo_Navigation_Flex}>
         <Link to="/"><img src="/netflix.png" alt="logo" title='Netflix' /></Link>
         <nav className={styles.navigation}>

@@ -1,13 +1,14 @@
 import { rotasContext } from "../Contexto/rotasContext";
 import { useContext } from "react";
+import Main from "../componentes/HomeComp/Main";
 
-function Home() {
+
+function Home({ filmesparams }) {
     const { setrotaAtual } = useContext(rotasContext)
     setrotaAtual("Home")
+
     return (
-        <div>
-            <h1>teste</h1>
-        </div>
+        <Main filmesparams={filmesparams} />
     );
 }
 export default Home;
