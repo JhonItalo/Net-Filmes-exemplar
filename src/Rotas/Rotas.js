@@ -35,15 +35,14 @@ const Rotas = () => {
     return (
         <BrowserRouter>
             <rotasContext.Provider value={{ rotaAtual, setrotaAtual }}>
-
                 <Header />
                 <Banner filmebanner={filmeDestaque} />
                 <Routes>
-                    <Route index element={<Home filmesparams={filmes} />} />
-                    <Route path="/series" element={<Series />} />
-                    <Route path="/filmes" element={<Filmes />} />
-                    <Route path="/bombando" element={<Bombando />} />
-                    <Route path="/minhalista" element={<MinhaLista />} />
+                    <Route path="Netflix-clone/" index element={<Home filmesparams={filmes} />} />
+                    <Route path="Netflix-clone/series" element={<Series filmesparams={filmes} />} />
+                    <Route path="Netflix-clone/filmes" element={<Filmes />} />
+                    <Route path="Netflix-clone/bombando" element={<Bombando />} />
+                    <Route path="Netflix-clone/minhalista" element={<MinhaLista />} />
                 </Routes>
                 <Footer />
             </rotasContext.Provider>

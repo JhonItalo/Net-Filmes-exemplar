@@ -27,13 +27,13 @@ function Header() {
   return (
     <header className={`${styles.header} ${activescrolly === true ? `${styles.activescrolly}` : ""} `}>
       <div className={styles.capsula_Logo_Navigation_Flex}>
-        <Link to="/"><img src="/netflix.png" alt="logo" title='Netflix' /></Link>
+        <Link to="/Netflix-clone"><img src="/netflix.png" alt="logo" title='Netflix' /></Link>
         <nav className={styles.navigation}>
-          <li><Link to='/' className={rotaAtual === "Home" ? `${styles.activeBold}` : ""} >Início</Link></li>
-          <li> <Link to='/series' className={rotaAtual === "Series" ? `${styles.activeBold}` : ""}>Séries</Link></li>
-          <li> <Link to="/filmes" className={rotaAtual === "Filmes" ? `${styles.activeBold}` : ""}>Filmes</Link></li>
-          <li> <Link to="/bombando" className={rotaAtual === "Bombando" ? `${styles.activeBold}` : ""}>Bombando</Link></li>
-          <li> <Link to="/minhalista" className={rotaAtual === "Minhalista" ? `${styles.activeBold}` : ""}> Minha lista</Link></li>
+          <li><Link to='/Netflix-clone' className={rotaAtual === "Home" ? `${styles.activeBold}` : ""} >Início</Link></li>
+          <li> <Link to='Netflix-clone/series' className={rotaAtual === "Series" ? `${styles.activeBold}` : ""}>Séries</Link></li>
+          <li> <Link to="Netflix-clone/filmes" className={rotaAtual === "Filmes" ? `${styles.activeBold}` : ""}>Filmes</Link></li>
+          <li> <Link to="Netflix-clone/bombando" className={rotaAtual === "Bombando" ? `${styles.activeBold}` : ""}>Bombando</Link></li>
+          <li> <Link to="Netflix-clone/minhalista" className={rotaAtual === "Minhalista" ? `${styles.activeBold}` : ""}> Minha lista</Link></li>
         </nav>
       </div>
 
