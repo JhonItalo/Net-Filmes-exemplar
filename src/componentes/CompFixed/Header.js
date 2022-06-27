@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import React, { useContext, useEffect, useState } from 'react';
 import { rotasContext } from '../../Contexto/rotasContext';
 import perfil from "../../Assets/perfil.PNG"
+import netflix from "../../Assets/netflix.png"
 
 function Header() {
   const { rotaAtual } = useContext(rotasContext)
@@ -27,7 +28,7 @@ function Header() {
   return (
     <header className={`${styles.header} ${activescrolly === true ? `${styles.activescrolly}` : ""} `}>
       <div className={styles.capsula_Logo_Navigation_Flex}>
-        <Link to="/Netflix-clone"><img src="/netflix.png" alt="logo" title='Netflix' /></Link>
+        <Link to="/Netflix-clone"><img src={netflix} alt="logo" title='Netflix' /></Link>
         <nav className={styles.navigation}>
           <li><Link to='/Netflix-clone' className={rotaAtual === "Home" ? `${styles.activeBold}` : ""} >Início</Link></li>
           <li> <Link to='Netflix-clone/series' className={rotaAtual === "Series" ? `${styles.activeBold}` : ""}>Séries</Link></li>
