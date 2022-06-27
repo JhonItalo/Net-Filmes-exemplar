@@ -2,6 +2,7 @@ import styles from './Header.module.scss'
 import { Link } from "react-router-dom";
 import React, { useContext, useEffect, useState } from 'react';
 import { rotasContext } from '../../Contexto/rotasContext';
+import perfil from "../../Assets/perfil.PNG"
 
 function Header() {
   const { rotaAtual } = useContext(rotasContext)
@@ -40,7 +41,7 @@ function Header() {
         <i className="fa-solid fa-magnifying-glass"></i>
         <i className="fa-solid fa-bell"></i>
         <div className={styles.user}>
-          <i className="fa-solid fa-user" style={{ fontSize: "25px" }}></i>
+          <img src={perfil} alt="perfil" style={{ width: "30px", heigh: "30px", borderRadius: "5px" }} />
           <i className="fa-solid fa-caret-down" style={{ fontSize: "15px" }}></i>
         </div>
       </div>

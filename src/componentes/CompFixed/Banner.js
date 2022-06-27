@@ -29,7 +29,8 @@ function Banner({ filmebanner }) {
                     <div className={styles.conteudo_banner_series}>
                         <h3>Séries</h3>
                         <div className={styles.select}>
-                            <p >Genêro</p>
+                            <p >Gêneros</p>
+                            <i className="fa-solid fa-caret-down"></i>
                         </div>
                     </div>
                 }

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import styles from "./Main.module.scss"
-import Slide from "./slides"
+import Slide from "./Slides"
 
 function Main({ filmesparams }) {
     const [filmes, setfilmes] = useState("")
@@ -17,9 +17,7 @@ function Main({ filmesparams }) {
             {(filmes != undefined && filmes != null && filmes != "") &&
                 <>
                     {filmes.map((item, key) => (
-
                         <div key={key} className={styles.lista_item}>
-
                             <h3 >{item.titulo}</h3>
                             <Slide item={item}></Slide>
 

@@ -1,8 +1,17 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import styles from "./Slide.module.scss"
 
 const Slide = ({ item }) => {
     const carroselscroll = useRef();
+
+    const [activeBtn, setactiveBtn] = useState(false);
+
+    const visibleBtn = () => {
+        setactiveBtn(true)
+    }
+    const hiddenBtn = () => {
+        setactiveBtn(false)
+    }
 
     const btn_direito = () => {
         carroselscroll.current.scrollLeft += (carroselscroll.current.offsetWidth - 68);
@@ -12,11 +21,11 @@ const Slide = ({ item }) => {
     }
 
     return (
-        <div className={styles.carrosel} ref={carroselscroll}>
-            <div onClick={btn_direito} className={styles.button_direita}>
+        <div className={styles.carrosel} ref={carroselscroll} onMouseOver={visibleBtn} onMouseOut={hiddenBtn}>
+            <div onClick={btn_direito} className={`${styles.button_direita} ${activeBtn === true ? `${styles.activeBtn}` : ""} }`}>
                 <i className="fa-solid fa-chevron-right"></i>
             </div>
-            <div onClick={btn_esquerdo} className={styles.button_esquerda}>
+            <div onClick={btn_esquerdo} className={`${styles.button_esquerda} ${activeBtn === true ? `${styles.activeBtn}` : ""} }`} >
                 <i className="fa-solid fa-chevron-right"></i>
             </div>
             {item.lista.results.map((item2, key) => (

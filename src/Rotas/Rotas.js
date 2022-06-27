@@ -9,6 +9,7 @@ import MinhaLista from "../Pages/MinhaLista"
 //componentes
 import Banner from "../componentes/CompFixed/Banner"
 import Header from "../componentes/CompFixed/Header"
+import Footer from "../componentes/CompFixed/Footer"
 //requisições func
 import { listafilmes } from "../Requisicoes"
 //context
@@ -34,6 +35,7 @@ const Rotas = () => {
     return (
         <BrowserRouter>
             <rotasContext.Provider value={{ rotaAtual, setrotaAtual }}>
+
                 <Header />
                 <Banner filmebanner={filmeDestaque} />
                 <Routes>
@@ -43,6 +45,7 @@ const Rotas = () => {
                     <Route path="/bombando" element={<Bombando />} />
                     <Route path="/minhalista" element={<MinhaLista />} />
                 </Routes>
+                <Footer />
             </rotasContext.Provider>
         </BrowserRouter>
     );
