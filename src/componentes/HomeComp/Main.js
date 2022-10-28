@@ -3,24 +3,20 @@ import styles from "./Main.module.scss"
 import Slide from "./Slides"
 
 function Main({ filmesparams }) {
-    const [filmes, setfilmes] = useState("")
-
+    const [filmes, setfilmes] = useState(filmesparams)
 
     useEffect(() => {
         setfilmes(filmesparams)
     }, [filmesparams])
 
-
-
     return (
         <div className={styles.container_listas}>
-            {(filmes != undefined && filmes != null && filmes != "") &&
+            {(filmes !== undefined && filmes != null && filmes !== "") &&
                 <>
-                    {filmes.map((item, key) => (
-                        <div key={key} className={styles.lista_item}>
+                    {filmes.map((item) => (
+                        <div key={item.titulo} className={styles.lista_item}>
                             <h3 >{item.titulo}</h3>
                             <Slide item={item}></Slide>
-
                         </div>
                     ))}
 

@@ -1,15 +1,12 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './Banner.module.scss'
-//componentes
-import Header from "./Header";
+import { useLocation } from 'react-router-dom';
 import InfoFilme from './InfoFilme';
-//context
-import { rotasContext } from '../../Contexto/rotasContext';
 
 function Banner({ filmebanner }) {
     const [filmeDestaque, setfilmeDestaque] = useState("")
-    //rotas context
-    const { rotaAtual } = useContext(rotasContext)
+    let { pathname } = useLocation();
+
 
     useEffect(() => {
         setfilmeDestaque(filmebanner);
@@ -25,7 +22,7 @@ function Banner({ filmebanner }) {
 
                 <InfoFilme filmeDestaqueParams={filmeDestaque} />
 
-                {rotaAtual === "Series" &&
+                {pathname === "/series" &&
                     <div className={styles.conteudo_banner_series}>
                         <h3>Séries</h3>
                         <div className={styles.select}>
@@ -35,19 +32,19 @@ function Banner({ filmebanner }) {
                     </div>
                 }
 
-                {rotaAtual === "Filmes" &&
+                {pathname === "/filmes" &&
                     <div className={styles.conteudo_banner_Filmes}>
                         <h1>filmes</h1>
                     </div>
                 }
 
-                {rotaAtual === "Bombando" &&
+                {pathname === "/bombando" &&
                     <div className={styles.conteudo_banner_Bombando}>
                         <h1>bombando</h1>
                     </div>
                 }
 
-                {rotaAtual === "Minhalista" &&
+                {pathname === "/minhalista" &&
                     <div className={styles.conteudo_banner_home}>
                         <h1>minhalista</h1>
                     </div>

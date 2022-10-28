@@ -1,12 +1,12 @@
 import styles from './Header.module.scss'
 import { Link } from "react-router-dom";
-import React, { useContext, useEffect, useState } from 'react';
-import { rotasContext } from '../../Contexto/rotasContext';
+import React, { useEffect, useState } from 'react';
 import perfil from "../../Assets/perfil.PNG"
 import netflix from "../../Assets/netflix.png"
+import Nav from './Nav';
 
 function Header() {
-  const { rotaAtual } = useContext(rotasContext)
+
   const [activescrolly, setactivescrolly] = useState(false)
 
   useEffect(() => {
@@ -28,16 +28,9 @@ function Header() {
   return (
     <header className={`${styles.header} ${activescrolly === true ? `${styles.activescrolly}` : ""} `}>
       <div className={styles.capsula_Logo_Navigation_Flex}>
-        <Link to="/Netflix-clone"><img src={netflix} alt="logo" title='Netflix' /></Link>
-        <nav className={styles.navigation}>
-          <li><Link to='/Netflix-clone' className={rotaAtual === "Home" ? `${styles.activeBold}` : ""} >Início</Link></li>
-          <li> <Link to='Netflix-clone/series' className={rotaAtual === "Series" ? `${styles.activeBold}` : ""}>Séries</Link></li>
-          <li> <Link to="Netflix-clone/filmes" className={rotaAtual === "Filmes" ? `${styles.activeBold}` : ""}>Filmes</Link></li>
-          <li> <Link to="Netflix-clone/bombando" className={rotaAtual === "Bombando" ? `${styles.activeBold}` : ""}>Bombando</Link></li>
-          <li> <Link to="Netflix-clone/minhalista" className={rotaAtual === "Minhalista" ? `${styles.activeBold}` : ""}> Minha lista</Link></li>
-        </nav>
+        <Link to="/"><img src={netflix} alt="logo" title='Netflix' /></Link>
+        <Nav />
       </div>
-
       <div className={styles.busca_e_icons}>
         <i className="fa-solid fa-magnifying-glass"></i>
         <i className="fa-solid fa-bell"></i>

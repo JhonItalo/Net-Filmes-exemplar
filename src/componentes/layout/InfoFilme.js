@@ -10,7 +10,7 @@ const InfoFilme = ({ filmeDestaqueParams }) => {
 
     useEffect(() => {
         setfilmeDestaque(filmeDestaqueParams)
-        if (filmeDestaqueParams.name != undefined || filmeDestaqueParams.name != null || typeof filmeDestaqueParams.name != "undefined") {
+        if (filmeDestaqueParams.name !== undefined || filmeDestaqueParams.name != null || typeof filmeDestaqueParams.name != "undefined") {
             const t = filmeDestaqueParams.name.replace(":", ":@")
             settitlecomposto(t.split("@"))
         }

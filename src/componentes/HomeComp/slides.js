@@ -28,9 +28,9 @@ const Slide = ({ item }) => {
             <div onClick={btn_esquerdo} className={`${styles.button_esquerda} ${activeBtn === true ? `${styles.activeBtn}` : ""} }`} >
                 <i className="fa-solid fa-chevron-right"></i>
             </div>
-            {item.lista.results.map((item2, key) => (
-                <div key={key} className={styles.carrosel_img} style={{
-                    backgroundImage: `url("https://image.tmdb.org/t/p/w300/${item2.backdrop_path}")`,
+            {item.lista.results.map((filme) => (
+                <div key={filme.id} className={styles.carrosel_img} style={{
+                    backgroundImage: `url("https://image.tmdb.org/t/p/w300/${filme.backdrop_path}")`,
                 }} >
                 </div>
             ))}
